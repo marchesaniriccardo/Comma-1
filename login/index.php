@@ -13,3 +13,7 @@
          /*Da ridefinire */    
     ?>
 </body>
+
+<?php 
+include "../assets/layouts/footer.php";
+?>

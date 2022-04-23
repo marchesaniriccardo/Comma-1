@@ -37,17 +37,17 @@ Sistema di autenticazione PHP di facile integrazione e sicurezza elevata con log
         
 
 ## Introduzione
-1. Qual'era lo scopo che era stato richiesto?
+### Qual'era lo scopo che era stato richiesto?
     Lo scopo di questa esperienza scolastica é la realizzazione di una web application che sia conforme con quanto ci é stato insegnato, che rispetti le convenzioni che ci impone la normativa ISO 9001.
-2. Dove é stata la parte più complicata?
+### Dove é stata la parte più complicata?
     La parte più complicata é stata nel capire il processo di produzione delle carte di credito in quanto tali informazioni non vengono divulgate facilmente.
-3. Da che cosa abbiamo preso spunto? 
+### Da che cosa abbiamo preso spunto? 
     Abbiamo preso spunto da quanto ci é stato insegnato a scuola nella materia di GPOI , TPSIT e INFORMATICA.
-4. Cosa ci ha lasciato questa esperienza?
+### Cosa ci ha lasciato questa esperienza?
     Ci ha permesso di capire come progettare un software informatico non solo nell'aspetto di produzione ma anche lo sviluppo della adeguata documentazione e analisi dei requisiti e rischi.
-5. Di cosa si occupa la nostra Web Application?
+### Di cosa si occupa la nostra Web Application?
     Si occupa della gestione e della risoluzione delle non conformità.
-6. Cosa si intende per risoluzione di una non conformità?
+### Cosa si intende per risoluzione di una non conformità?
     La presa in carico di un problema e quindi la decisione di azioni correttive.
 ## Requisiti
 ### Documentazione

@@ -12,4 +12,3 @@
          /*Da ridefinire */    
     ?>
 </body>
-</html>

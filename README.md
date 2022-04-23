@@ -51,7 +51,7 @@ Sistema di autenticazione PHP di facile integrazione e sicurezza elevata con log
     La presa in carico di un problema e quindi la decisione di azioni correttive.
 ## Requisiti
 ### Documentazione
- - [Storyboard]()
+ - [Storyboard](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/Storyboard.pdf)
  - [Schema ER](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/schema%20E-R%20NC%20ristrutturato.drawio)
  - [Gantt](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/GANTT_PCTO.pdf)
  - [WBS](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/WBS)

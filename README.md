@@ -21,7 +21,6 @@ Sistema di autenticazione PHP di facile integrazione e sicurezza elevata con log
     - [Sicurezza](#sicurezza)
       - [SQL Injection Protection](#sql-injection-protection)
       - [Header & Email Injection Protection](#header--email-injection-protection)
-      - [Secure Remember-me Cookie](#secure-remember-me-cookie)
       - [Secure Account Activation & Password Reset](#secure-account-activation--password-reset)
       - [Login | Signup](#login--signup)
       - [Automatic Logout on Inactivity](#automatic-logout-on-inactivity)
@@ -153,9 +152,6 @@ foreach($_POST as $key => $value){
   $_POST[$key] = _cleaninjections(trim($value));
 }
 ```
-#### Secure Remember-me Cookie
-
-Il cookie impostato per la funzionalità `remember-me` utilizza valori `selector` e `validator` crittografati che impediscono interferenze o exploit. Il token stesso non viene memorizzato così com'é nel database, eliminando il rischio di fuoriuscita di informazioni in caso di violazione del database. Il token di autenticazione e il selettore sono memorizzati nella tabella `auth_tokens` del database.
 
 #### Secure Account Activation & Password Reset
 

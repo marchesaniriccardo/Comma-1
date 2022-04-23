@@ -38,9 +38,7 @@ Sistema di autenticazione PHP di facile integrazione e sicurezza elevata con log
 
 ## Introduzione
 ### Qual'era lo scopo che era stato richiesto?
-```md
 Lo scopo di questa esperienza scolastica é la realizzazione di una web application che sia conforme con quanto ci é stato insegnato, che rispetti le convenzioni che ci impone la normativa ISO 9001.
-```
 ### Dove é stata la parte più complicata?
 La parte più complicata é stata nel capire il processo di produzione delle carte di credito in quanto tali informazioni non vengono divulgate facilmente.   
 ### Da che cosa abbiamo preso spunto? 

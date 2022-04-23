@@ -7,7 +7,7 @@ Sistema di autenticazione PHP di facile integrazione e sicurezza elevata con log
 
 # Tabella dei contenuti
 - [Tabella dei contenuti](#tabella-dei-contenuti)
-    - [introduzione](#introduzione)
+    - [Introduzione](#introduzione)
         - [Requisiti](#requisiti)
         - [Documentazione](#documentazione)
         - [Installazione](#installazione)

@@ -28,12 +28,38 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cliente` (
-  `Nome` varchar(40) NOT NULL,
-  `Username` varchar(20) DEFAULT NULL,
-  `Password` varchar(20) DEFAULT NULL,
-  `Indirizzo` varchar(40) DEFAULT NULL,
-  `Telefono` varchar(14) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) UNSIGNED NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL,
+  `headline` varchar(255) DEFAULT NULL,
+  `bio` text DEFAULT NULL,
+  `profile_image` varchar(255) NOT NULL DEFAULT '_defaultUser.png',
+  `verified_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `last_login_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `auth_tokens`
+--
+
+CREATE TABLE `auth_tokens` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `auth_type` varchar(255) NOT NULL,
+  `selector` text NOT NULL,
+  `token` longtext NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `expires_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -45,7 +71,7 @@ CREATE TABLE `fornitore` (
   `Nome` varchar(20) NOT NULL,
   `Indirizzo` varchar(40) DEFAULT NULL,
   `Telefono` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `fornitore`
@@ -69,7 +95,7 @@ CREATE TABLE `impiegato` (
   `Cognome` varchar(50) DEFAULT NULL,
   `Tipo` varchar(50) DEFAULT NULL,
   `Processo` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -80,7 +106,7 @@ CREATE TABLE `impiegato` (
 CREATE TABLE `materie_prime` (
   `Codice` varchar(10) NOT NULL,
   `Lotto` char(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `materie_prime`
@@ -118,7 +144,7 @@ CREATE TABLE `nc_input` (
   `Priorita` varchar(20) DEFAULT NULL,
   `Addetto_gestione` char(16) NOT NULL,
   `Origine` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `nc_input`
@@ -143,7 +169,7 @@ CREATE TABLE `nc_interna` (
   `Priorita` varchar(50) DEFAULT NULL,
   `Addetto_gestione` char(16) NOT NULL,
   `Origine` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `nc_interna`
@@ -170,7 +196,7 @@ CREATE TABLE `nc_output` (
   `Priorita` varchar(20) DEFAULT NULL,
   `Addetto_gestione` char(16) NOT NULL,
   `Origine` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `nc_output`
@@ -189,7 +215,7 @@ INSERT INTO `nc_output` (`Numero`, `Descrizione`, `Azioni_correttive`, `Decision
 CREATE TABLE `processi` (
   `Nome` varchar(50) NOT NULL,
   `Descrizione` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `processi`
@@ -219,7 +245,7 @@ INSERT INTO `processi` (`Nome`, `Descrizione`) VALUES
 CREATE TABLE `prodotto` (
   `Codice` varchar(10) NOT NULL,
   `Lotto` char(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `prodotto`
@@ -263,7 +289,7 @@ CREATE TABLE `rilevamento_input` (
   `Impiegato` varchar(20) NOT NULL,
   `Materia_prima` varchar(10) NOT NULL,
   `Data` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `rilevamento_input`
@@ -284,7 +310,7 @@ CREATE TABLE `rilevamento_interno` (
   `Impiegato` char(16) NOT NULL,
   `Semilavorato` char(16) NOT NULL,
   `Data` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `rilevamento_interno`
@@ -305,7 +331,7 @@ CREATE TABLE `rilevamento_output` (
   `Cliente` varchar(40) NOT NULL,
   `Prodotto` varchar(10) NOT NULL,
   `Data` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `rilevamento_output`
@@ -326,7 +352,7 @@ CREATE TABLE `risoluzione_input` (
   `Fornitore` varchar(20) NOT NULL,
   `Data_inizio` date DEFAULT NULL,
   `Data_fine` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `risoluzione_input`
@@ -347,7 +373,7 @@ CREATE TABLE `risoluzione_interna` (
   `Impiegato` char(16) NOT NULL,
   `Data_inizio` date DEFAULT NULL,
   `Data_fine` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `risoluzione_interna`
@@ -368,7 +394,7 @@ CREATE TABLE `risoluzione_output` (
   `Impiegato` varchar(20) NOT NULL,
   `Data_inizio` date DEFAULT NULL,
   `Data_fine` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `risoluzione_output`
@@ -387,7 +413,7 @@ INSERT INTO `risoluzione_output` (`NC`, `Impiegato`, `Data_inizio`, `Data_fine`)
 CREATE TABLE `semilavorato` (
   `Codice` char(16) NOT NULL,
   `Lotto` char(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `semilavorato`
@@ -431,7 +457,7 @@ CREATE TABLE `verifica_input` (
   `Impiegato` varchar(20) NOT NULL,
   `Data_inizio` date DEFAULT NULL,
   `Data_fine` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `verifica_input`
@@ -452,7 +478,7 @@ CREATE TABLE `verifica_interna` (
   `Impiegato` char(16) NOT NULL,
   `Data_inizio` date DEFAULT NULL,
   `Data_fine` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `verifica_interna`
@@ -473,7 +499,7 @@ CREATE TABLE `verifica_output` (
   `Impiegato` varchar(20) NOT NULL,
   `Data_inizio` date DEFAULT NULL,
   `Data_fine` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `verifica_output`

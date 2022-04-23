@@ -21,7 +21,6 @@ Sistema di autenticazione PHP di facile integrazione e sicurezza elevata con log
     - [Sicurezza](#sicurezza)
       - [SQL Injection Protection](#sql-injection-protection)
       - [Header & Email Injection Protection](#header--email-injection-protection)
-      - [CSRF Protection](#csrf-protection)
       - [Secure Remember-me Cookie](#secure-remember-me-cookie)
       - [Secure Account Activation & Password Reset](#secure-account-activation--password-reset)
       - [Login | Signup](#login--signup)
@@ -152,23 +151,6 @@ In tutte le funzionalità di back, ogni singolo valore incluso nella posta viene
 foreach($_POST as $key => $value){
 
   $_POST[$key] = _cleaninjections(trim($value));
-}
-```
-#### CSRF Protection
-
-C'è anche una pesante protezione contro gli tentativi di CSRF. Un `token csrf` sicuro viene generato all'avvio della sessione e inviato come valore nascosto nel corpo del post per tutti i moduli, in cui viene convalidato e consente allo script di procedere solo se la convalida riesce. La protezione csrf funziona per tutti i moduli, indipendentemente dal fatto che l'utente sia collegato o meno.
-
-Il token csrf è gestito dalle funzioni presenti nel file `assets/includes/security_functions.php`. Il token viene crittografato per impedirne l'estrazione e l'utilizzo.
-```php
-// csrf token generation
-
-function generate_csrf_token() {
-  if (!isset($_SESSION)) {
-      session_start();
-  }
-  if (empty($_SESSION['token'])) {
-      $_SESSION['token'] = bin2hex(random_bytes(32));
-  }
 }
 ```
 #### Secure Remember-me Cookie

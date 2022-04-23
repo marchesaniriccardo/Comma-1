@@ -5,35 +5,8 @@
 Sistema di autenticazione PHP di facile integrazione e sicurezza elevata con login, registrazione, profili utente, modifica profilo, verifica dell'account via e-mail, sistema di reimpostazione della password, disconnessione automatica in caso di inattività, variabile di stato e di errore globali, controlli di autenticazione.
 
 
-# Tabella dei contenuti
-- [Tabella dei contenuti](#tabella-dei-contenuti)
-    - [Introduzione](#introduzione)
-        - [Requisiti](#requisiti)
-        - [Documentazione](#documentazione)
-        - [Installazione](#installazione)
-        - [Popolazione Database](#popolazione-database)
-        - [Stuttura File Progetto](#struttura-file-progetto)
-        - [Istruzioni](#istruzioni)
-    - [Componenti](#componenti)
-      - [Linguaggi di Programmazione](#linguaggi-di-programmazione)
-      - [Ambiente di Sviluppo](#ambiente-di-sviluppo)
-      - [Risorse Esterne/Plugin](#risorse-esterneplugins)
-    - [Sicurezza](#sicurezza)
-      - [SQL Injection Protection](#sql-injection-protection)
-      - [Header & Email Injection Protection](#header--email-injection-protection)
-      - [CSRF Protection](#csrf-protection)
-      - [Secure Remember-me Cookie](#secure-remember-me-cookie)
-      - [Secure Account Activation & Password Reset](#secure-account-activation--password-reset)
-      - [Login | Signup](#login--signup)
-      - [Automatic Logout on Inactivity](#automatic-logout-on-inactivity)
-      - [User Profile | Profile Editing](#user-profile--profile-editing)
-      - [Email Verification | Account Activation](#email-verification--account-activation)
-      - [Password Resetting](#password-resetting)
-      - [Auth Verification](#auth-verification)
-      - [Remember Me Feature](#remember-me-feature)
-      - [GLOBAL temporary ERROR & STATUS values](#global-temporary-error--status-values)
-      - [Contact System](#contact-system)
-      - [Future Improvements](#future-improvements)
+
+
         
 
 ## Introduzione
@@ -54,7 +27,7 @@ La presa in carico di un problema e quindi la decisione di azioni correttive.
  - [Storyboard](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/Storyboard.pdf)
  - [Schema ER](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/schema%20E-R%20NC%20ristrutturato.drawio)
  - [Gantt](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/GANTT_PCTO.pdf)
- - [WBS](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/WBS.JPG)
+ - [WBS](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/WBS.png)
  - [CPM]()
 ### Installazione
 1. Importa il file 'assets/setup/db.sql' nel DBMS (PhpMyAdmin). Il file dump crea il database, quindi nessun tipo di azione é richiesta. Se si vuole aggiornare il nome del database, cambialo nel file dump dove il database é dichiarato.

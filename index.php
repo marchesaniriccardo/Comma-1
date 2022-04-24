@@ -3,7 +3,7 @@
     if (isset($_SESSION['auth'])) {
 
         header("Location: home");
-        exit();
+        exit(qualcosa);
     }
     else {
 

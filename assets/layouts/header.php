@@ -22,3 +22,6 @@
     <link rel="stylesheet" href="../assets/css/app.css">
     <link rel="stylesheet" href="custom.css" >
 </head>
+<body>
+
+    <?php require 'navbar.php'; ?>

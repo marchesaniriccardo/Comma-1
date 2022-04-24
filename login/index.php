@@ -51,7 +51,7 @@
 
             <button class="btn btn-lg btn-primary btn-block" type="submit" value="loginsubmit" name="loginsubmit">Login</button>
 
-            <p class="mt-3 text-muted text-center"><a href="../reset-password/">Forgot password?</a></p>
+            <p class="mt-3 text-muted text-center"><a href="../reset-password/">Password dimenticata?</a></p>
 
                 <p class="mt-4 mb-3 text-muted text-center">
                     <a href="https://github.com/pcto5ID/Comma" target="_blank">

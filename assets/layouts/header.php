@@ -24,4 +24,4 @@
 </head>
 <body>
 
-    <?php require 'navbar.php'; ?>
+    <!-- require navbar -->

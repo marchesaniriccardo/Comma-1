@@ -13,7 +13,7 @@
             <!-- Insert CSRF token -->
 
             <div class = "text-center">
-                <img class="mb-1" src="../assets/images/logo.png" alt="" width="130" height="130">
+                <img class="mb-1" src="../assets/images/logo.png" alt="" height="130">
             </div>    
 
             <h6 class="h3 mb-3 font-weight-normal text-muted text-center">Accesso all'Area Privata</h6>

@@ -47,9 +47,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Accedi</button>
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit" value="loginsubmit" name="loginsubmit">Login</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" value="loginsubmit" name="loginsubmit">Accedi</button>
 
             <p class="mt-3 text-muted text-center"><a href="../reset-password/">Password dimenticata?</a></p>
 

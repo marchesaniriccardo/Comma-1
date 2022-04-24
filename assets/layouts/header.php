@@ -11,7 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title><?php echo APP_NAME ?></title>
-    <?php
-    /* Creare link per il frontend usando come plugion FontAwesome e Bootstrap per Cela e Maggiolo */
-    ?>
+
+    <title><?php echo TITLE . ' | ' . APP_NAME; ?></title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/vendor/fontawesome-5.12.0/css/all.min.css">
+ 
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="custom.css" >
 </head>

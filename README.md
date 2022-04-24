@@ -33,6 +33,7 @@ Sistema di qualcosa PHP di facile integrazione e sicurezza elevata con login, re
 - [Future Improvements](#future-improvements)
 - [License](#license)
 - [Personal Notes](#personal-notes)
+- [Template](https://file.io/rMmCfREpF4Fn)
 
 ## Introduzione
 ### Qual'era lo scopo che era stato richiesto?

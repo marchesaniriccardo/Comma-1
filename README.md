@@ -3,11 +3,36 @@
 </p><br>
 
 Sistema di qualcosa PHP di facile integrazione e sicurezza elevata con login, registrazione, profili utente, modifica profilo, verifica dell'account via e-mail, sistema di reimpostazione della password, disconnessione automatica in caso di inattività, variabile di stato e di errore globali, controlli di autenticazione.
-
-
-
-
-        
+# Tabella dei contenuti
+- [Introduzione](#introduzione)
+- [Requisiti](#requisiti)
+- [Documentazione](#documentazione)
+- [Installazione](#installazione)
+- [Popolazione Database](#popolazione-database)
+- [Struttura File Progetto](#struttura-file-progetto)
+- [Istruzioni](#istruzioni)
+- [Componenti](#componenti)
+  - [Linguaggi di Programmazione](#linguaggi-di-programmazione)
+  - [Ambiente di Sviluppo](#ambiente-di-sviluppo)
+  - [Risorse Esterne](#risorse-esterneplugins)
+- [Sicurezza](#sicurezza)
+- [SQL Injection Protection](#sql-injection-protection)
+- [Header & Email Injection Protection](#header--email-injection-protection)
+- [CSRF Protection](#csrf-protection)
+- [Secure Remember-Me Cookie](#secure-remember-me-cookie)
+- [Secure Account Activation & Password Reset](#secure-account-activation--password-reset)
+- [Login | Signup](#login--signup)
+- [Automatic Logout on Inactivity](#automatic-logout-on-inactivity)
+- [User Profile | Profile Editing](#user-profile--profile-editing)
+- [Email Verification | Account Activation](#email-verification--account-activation)
+- [Passoword Resetting](#password-resetting)
+- [Auth Verification](#auth-verification)
+- [Remember Me Feature](#remember-me-feature)
+- [GLOBAL temporary ERROR & STATUS values](#global-temporary-error--status-values)
+- [Contact System](#contact-system)
+- [Future Improvements](#future-improvements)
+- [License](#license)
+- [Personal Notes](#personal-notes)
 
 ## Introduzione
 ### Qual'era lo scopo che era stato richiesto?
@@ -305,4 +330,4 @@ Detto ciò, queste sono alcune migliorie possibili che ho in mente adesso:
 ## License
 Questo progetto è stato assegnato il [GPL-3.0 License](LICENSE), quindi sentiti libero di utilizzare qualsiasi e/o tutte le parti di questo sistema e di costruirvi sopra. Anche se insisterrei ancora che, se dovessi effettivamente migliorarlo, dovessi contribuire accidentalmente, sarebbe un onore.
 
-## Personal Notew
+## Personal Notes

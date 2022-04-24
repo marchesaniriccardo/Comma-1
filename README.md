@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/Comma.png" width="350" align="center"/>
+  <img src="assets/images/logo.png" width="350" align="center"/>
 </p><br>
 
 Sistema di qualcosa PHP di facile integrazione e sicurezza elevata con login, registrazione, profili utente, modifica profilo, verifica dell'account via e-mail, sistema di reimpostazione della password, disconnessione automatica in caso di inattività, variabile di stato e di errore globali, controlli di autenticazione.

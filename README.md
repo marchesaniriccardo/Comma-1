@@ -154,7 +154,12 @@ foreach($_POST as $key => $value){
 }
 ```
 #### CSRF Protection
+/* per la generazione di una sessione ho creato un valore di 64 byte, dopodiche ho fatto una conversione in 'SHA256' e con le seguenti righe
 
+$name_session = $_SESSION['csrf_token'] = $final_csrf; //assegno all'ID il valore csrf
+session_name($name_session); //inserisco il nome della sessisone ($name_session) come il valore csrf
+
+*/
 C'è anche una pesante protezione contro gli tentativi di CSRF. Un `token csrf` sicuro viene generato all'avvio della sessione e inviato come valore nascosto nel corpo del post per tutti i moduli, in cui viene convalidato e consente allo script di procedere solo se la convalida riesce. La protezione csrf funziona per tutti i moduli, indipendentemente dal fatto che l'utente sia collegato o meno.
 
 Il token csrf è gestito dalle funzioni presenti nel file `assets/includes/security_functions.php`. Il token viene crittografato per impedirne l'estrazione e l'utilizzo.
@@ -179,6 +184,37 @@ Il cookie impostato per la funzionalità `remember-me` utilizza valori `selector
 Le funzionalità per l'attivazione dell'account e il ripristino della password utilizzano entrambe un link inviato via email che utilizza anche valori `selector` e `validator` crittografati. Tutti e tre i livelli, ovvero i cookie remember-me, l'attivazione dell'account e il ripristino della password utilizzano la tabella `auth_tokens` per archiviare i token crittografati e il selettore. Ognuno dei token ha un tempo di scadenza, il che significa che una volta scaduti, non possono essere utilizzati. Tutti i token vengono eliminati all'utilizzo, quindi non possono essere utilizzati più e più volte.
 
 ### Login | Signup
+
+Con il segunte codice si verifica l'utente:
+
+function check_logged_in(){
+  //controllo se sono valide la sessione e il post (sia token che submit)
+    if((!isset($_POST['token']) || !isset($_SESSION['token'])) && !isset($_POST['submit'])){
+        redirect_to('login.php'); //se fossero vuoti allora rimanda alla pagina di login
+    }
+    if(empty($_POST['submit'])){ //stessa cosa con il submit
+        echo("\nERRORE: %s" . $conn->connect_error); //stampa l'errore
+    }
+
+  //controlla se è correttamente settata e non è vuota
+    if(isset($_POST['submit']) && !empty($_POST['submit'])){ 
+        //inizializzo le variabili
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        //creo la query
+        $sql = "SELECT * FROM cliente WHERE username = '$username' AND password_ = '$password'";
+        //eseguo la query
+        $exe_q = mysqli_query($conn, $sql);
+        if(!isset($exe_q) || empty($exe_q)){
+            redirect_to('login.php' . '?error=1;<scrpt>alert("ERRORE: %s");</scrpt>' . $conn->connect_error);
+        }
+        if(isset($exe_q) && !empty($exe_q)){
+            $url_username = hash('sha256', $username); //genero lo SHA256 dell'username per l'url
+            redirect_to('../login/index.php' . $url_username); //rendo un url personale al momento del login
+        }
+    }
+}
+
 
 Il sistema supporta un sistema di login e registrazione predefinito e sicuro. L'utente può registrarsi per creare un nuovo account e verrà quindi invitato a effettuare il login sul nuovo account con le sue credenziali. L'utente può anche impostare la sua immagine del profilo durante la registrazione. Per creare un nuovo account, l'utente deve impostare un nome utente univoco e un indirizzo email. Sono disponibili anche altri campi di informazione, ma sono facoltativi e possono essere saltati.
 

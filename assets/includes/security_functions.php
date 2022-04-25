@@ -1,4 +1,11 @@
 <?php
+    //forzo la generazione di una sessione con un nome numerico specifico in SHA256
+    function custom_session_start() {
+        $gen_value = bin2hex(random_bytes(64)); //genera 64 valori random
+        $final_csrf = hash('sha256', $gen_value); //sha256 hash del valore random
+        $name_session = $_SESSION['csrf_token'] = $final_csrf;
+        session_name($name_session);
+    }
 /*
 function _cleaninjections($test) {
 
@@ -27,7 +34,8 @@ function generate_csrf_token() {
     if (empty($_SESSION['token'])) {
         $gen_value = bin2hex(random_bytes(64)); //genera 64 valori random
         $final_csrf = hash('sha256', $gen_value); //sha256 hash del valore random
-        $_SESSION['csrf_token'] = $final_csrf;
+        $_SESSION['token'] = $final_csrf;
+        $_POST['token'] = $final_csrf; //rendo identintico per entrambi gli oggetti
     }
 }
 
@@ -40,21 +48,17 @@ function insert_csrf_token() {
 
 function verify_csrf_token() {
 
-    generate_csrf_token();
+    //generate_csrf_token();
 
     if (!empty($_POST['token'])) {
-
         if (hash_equals($_SESSION['token'], $_POST['token'])) {
-
             return true;
         } 
         else {
-            
             return false;
         }
     }
     else {
-
         return false;
     }
 }

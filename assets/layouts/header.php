@@ -2,6 +2,8 @@
     session_start();
     require "../assets/setup/env.php";
     require "../assets/setup/connessionedb.php";
+    require '../assets/includes/auth_functions.php';
+    require '../assets/includes/security_functions.php';
 ?>
 
 <!DOCTYPE html>

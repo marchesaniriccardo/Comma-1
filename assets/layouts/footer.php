@@ -1,5 +1,6 @@
-<!-- Check if the user is logged in -->
-
+<?php
+    require "../assests/include/auth_function.php";
+?>
 </body>
 <footer id="myFooter">
     <div class="container">

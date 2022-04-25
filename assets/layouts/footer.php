@@ -7,7 +7,7 @@
             <div class="col-sm-3">
                 <h2 class="logo">
                     <a href="../home/" target="_blank"> 
-                        <img src="../assets/images/logowhite.png" alt="" width="200" height="200" class="">
+                        <img src="../assets/images/logowhite.png" alt="" height="200" class="">
                     </a>
                 </h2>
             </div>

@@ -186,7 +186,7 @@ Le funzionalità per l'attivazione dell'account e il ripristino della password u
 ### Login | Signup
 
 Con il segunte codice si verifica l'utente:
-
+```php
 function check_logged_in(){
   //controllo se sono valide la sessione e il post (sia token che submit)
     if((!isset($_POST['token']) || !isset($_SESSION['token'])) && !isset($_POST['submit'])){
@@ -214,7 +214,7 @@ function check_logged_in(){
         }
     }
 }
-
+```
 
 Il sistema supporta un sistema di login e registrazione predefinito e sicuro. L'utente può registrarsi per creare un nuovo account e verrà quindi invitato a effettuare il login sul nuovo account con le sue credenziali. L'utente può anche impostare la sua immagine del profilo durante la registrazione. Per creare un nuovo account, l'utente deve impostare un nome utente univoco e un indirizzo email. Sono disponibili anche altri campi di informazione, ma sono facoltativi e possono essere saltati.
 

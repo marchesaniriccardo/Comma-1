@@ -7,7 +7,7 @@
             <div class="col-sm-3">
                 <h2 class="logo">
                     <a href="../home/" target="_blank"> 
-                        <img src="../assets/images/logowhite.png" alt="" width="200" height="200" class="">
+                        <img src="../assets/images/logowhite.png" alt="" height="200" class="">
                     </a>
                 </h2>
             </div>
@@ -38,7 +38,7 @@
                     <a href="https://github.com/pcto5ID" class="twitter" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/marco-fanelli-087289238/" class="facebook" target="_blank">
+                    <a href="https://youtu.be/dQw4w9WgXcQ" class="facebook" target="_blank">
                             <i class="fab fa-linkedin"></i>
                     </a>
                 </div>

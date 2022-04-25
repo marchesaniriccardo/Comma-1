@@ -10,7 +10,7 @@
         </div>
         <div class="col-sm-4"> 
             <form action="includes/login_include.php" class="form-auth" method="POST">
-                <!-- Insert CSRF token -->
+                <?php insert_csrf_token(); ?>
 
                 <div class = "text-center">
                     <img class="mb-1" src="../assets/images/logo.png" alt="" height="130">

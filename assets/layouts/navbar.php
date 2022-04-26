@@ -7,7 +7,7 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm p-2">
 
 
-            insert_csrf_token();
+            <?php insert_csrf_token(); ?>
 
 
             <div class="container">

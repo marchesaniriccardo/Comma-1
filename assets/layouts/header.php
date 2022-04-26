@@ -27,3 +27,7 @@
 <body>
 
     <!-- require navbar -->
+
+<?php
+    require"../asset/layout/navbar.php";
+?>

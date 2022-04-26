@@ -209,7 +209,7 @@ function check_logged_in(){
             redirect_to('login.php' . '?error=1;<scrpt>alert("ERRORE: %s");</scrpt>' . $conn->connect_error);
         }
         if(isset($exe_q) && !empty($exe_q)){
-            $url_username = hash('sha256', $username); //genero lo SHA256 dell'username per l'url
+            //$url_username = hash('sha256', $username); //genero lo SHA256 dell'username per l'url
             redirect_to('../login/index.php' . $url_username); //rendo un url personale al momento del login
         }
     }

@@ -1,33 +1,25 @@
-/*
-        DA ULTIMARE!!!!!!!!!!!!!!!!
-*/
 <?php
     //controllo se sono valide la sessione e il post (sia token che submit)
-    if((!isset($_POST['token']) || !isset($_SESSION['token'])) && !isset($_POST['submit'])){
-        header('Location: ../login/index.php'); //se fossero vuoti allora rimanda alla pagina di login
+    if((!isset($_POST['token']) || !isset($_SESSION['token'])) && (!isset($_POST['submit']) || empty($_POST['submit']))){
+        $error_msg = "\nERRORE: %s" . $conn->connect_error; //stampa l'errore
+        header('Location: ../login/index.php?error=1&<script>allert("%s")</script>' . $error_msg); //se fossero vuoti allora rimanda alla pagina di login
     }
-    if(empty($_POST['submit'])){ //stessa cosa con il submit
-        echo("\nERRORE: %s" . $conn->connect_error); //stampa l'errore
-    }
-
     //controlla se è correttamente settata e non è vuota
     if(isset($_POST['submit']) && !empty($_POST['submit'])){ 
         //inizializzo le variabili
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $u = $_POST['username'];
+        $p = $_POST['password'];
+        $username = _cleaninjections($u);
+        $password = _cleaninjections($p);
         //creo la query
         $sql = "SELECT username password_ FROM cliente WHERE username = '$username' AND password_ = '$password'";
-        //eseguo la query
-        $exe_q = mysqli_query($conn, $sql);
-        
-        //controllo se ci sono errori nella query
-        if(!isset($exe_q) || empty($exe_q)){
-            header('Location: ../login/index.php?error=1;<scrpt>alert("ERRORE: %s");</scrpt>' . $conn->connect_error);
-        }
-        //controllo se ci sono risultati e la query dunque è validata
-        if($exe_q == true){
-            $url_username = hash('sha256', $username); //genero lo SHA256 dell'username per l'url
-            header('Location: ../login/index.php'. $url_username); //rendo un url personale al momento del login
-        }
+        //preparo le condizioni per l'esecuzione di una query
+        $stmt = mysqli_stmt_init($conn);
+        if((mysqli_stmt_prepare($stmt, $sql)) == true){ //controllo se è pronta la query e la variabile "stmt"
+            mysqli_stmt_bind_param($stmt, "s", $username);
+            mysqli_stmt_execute($stmt); //eseguo la Query attraverso "stmt"
+            header('Location: ../login/index.php?user=' . $username); //rendo un url personale al momento del login
+        }else
+            header("Location: ../login/index.php?error=1;<scrpt>alert('ERRORE: %s". $conn->connect_error . "');</scrpt>");
     }
 ?>

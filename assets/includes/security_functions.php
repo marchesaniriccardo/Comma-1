@@ -38,6 +38,7 @@
     function re_equal_csrf(){
         if (hash_equals($_SESSION['token'], $_POST['token']))
             return true;
+        
     }
     function insert_csrf_token() {
         generate_csrf_token();
@@ -59,3 +60,4 @@
             }
         }
     }
+?>

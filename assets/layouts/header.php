@@ -1,6 +1,7 @@
 <?php
     require "../assets/setup/env.php";
-    require "../assets/setup/connessionedb.php";
+    require_once "../assets/setup/connessionedb.php";
+    require "../assets/includes/auth_functions.php";
     require '../assets/includes/security_functions.php';
     custom_session_start();
 
@@ -29,5 +30,5 @@
     <!-- require navbar -->
 
 <?php
-    require"../asset/layout/navbar.php";
+    require"../assets/layouts/navbar.php";
 ?>

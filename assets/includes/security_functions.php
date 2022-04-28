@@ -35,6 +35,7 @@
             $_POST['token'] = $final_csrf; //rendo identintico per entrambi gli oggetti
         }
     }
+    /*
     function re_equal_csrf(){
         if((empty($_SESSION['token']) || !isset($_SESSION['token'])) && (empty($_POST['token'])) || !isset($_POST['token'])){
             if((isset($_POST['token']) && (!empty($_POST['token']))){
@@ -45,6 +46,7 @@
             return true;
         }
     }
+    */
     function insert_csrf_token() {
         generate_csrf_token();
         echo '<input type="hidden" name="token" value="' . $_SESSION['token'] . '" />';
@@ -52,9 +54,9 @@
     function verify_csrf_token() {
         if (empty($_POST['token']) || empty($_SESSION['token'])) {
             generate_csrf_token();
-            if (!hash_equals($_SESSION['token'], $_POST['token']){
-                re_equal_csrf();
-            }
+            /*if (!hash_equals($_SESSION['token'], $_POST['token']){
+                re_equal_csrf(); 
+            }*/
         }
         if (!empty($_POST['token']) || !empty($_SESSION['token']) && hash_equals($_SESSION['token'], $_POST['token'])){
             return true;

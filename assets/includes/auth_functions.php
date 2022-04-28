@@ -1,8 +1,8 @@
 <?php
     //controllo se sono valide la sessione e il post (sia token che submit)
     if((!isset($_POST['token']) || !isset($_SESSION['token'])) && (!isset($_POST['submit']) || empty($_POST['submit']))){
-        $error_msg = "\nERRORE: %s" . $conn->connect_error; //stampa l'errore
-        header('Location: ../login/index.php?error=1&<script>allert("%s")</script>' . $error_msg); //se fossero vuoti allora rimanda alla pagina di login
+        $error_msg = "error=1&<script>allert('ERRORE: %s')</script>" . $conn->connect_error; //stampa l'errore
+        header('Location: ../login/index.php?' . $error_msg); //se fossero vuoti allora rimanda alla pagina di login
     }
     //controlla se è correttamente settata e non è vuota
     if(isset($_POST['submit']) && !empty($_POST['submit'])){ 

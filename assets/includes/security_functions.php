@@ -36,9 +36,14 @@
         }
     }
     function re_equal_csrf(){
-        if (hash_equals($_SESSION['token'], $_POST['token']))
+        if((empty($_SESSION['token']) || !isset($_SESSION['token'])) && (empty($_POST['token'])) || !isset($_POST['token'])){
+            if((isset($_POST['token']) && (!empty($_POST['token']))){
+                $_POST['token']->$_SESSION['token'];
+            }else{
+                $_POST['token']->$_SESSION['token'];
+            }
             return true;
-        
+        }
     }
     function insert_csrf_token() {
         generate_csrf_token();

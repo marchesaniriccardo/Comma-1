@@ -15,10 +15,11 @@
         $sql = "SELECT username password_ FROM cliente WHERE username = '$username' AND password_ = '$password'";
         //preparo le condizioni per l'esecuzione di una query
         $stmt = mysqli_stmt_init($conn);
-        if((mysqli_stmt_prepare($stmt, $sql)) == true){ //controllo se è pronta la query e la variabile "stmt"
-            mysqli_stmt_bind_param($stmt, "s", $username);
+        $isLogged = mysqli_stmt_prepare($stmt, $sql); 
+        if($isLogged === true){ //controllo se è loggato
+            mysqli_stmt_bind_param($stmt, "ss", $username, $password);
             mysqli_stmt_execute($stmt); //eseguo la Query attraverso "stmt"
-            header('Location: ../login/index.php?user=' . $username); //rendo un url personale al momento del login
+            header('Location: ../login/index.php?user=' . $username . '&IsLogged=' . $isLogged); //rendo un url personale al momento del login
         }else
             header("Location: ../login/index.php?error=1;<scrpt>alert('ERRORE: %s". $conn->connect_error . "');</scrpt>");
     }

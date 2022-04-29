@@ -55,6 +55,7 @@ La presa in carico di un problema e quindi la decisione di azioni correttive.
  - [Gantt](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/GANTT_PCTO.pdf)
  - [WBS](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/WBS.png)
  - [CPM](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/Diagramma_dipendenze.png)
+ - [Template](https://github.com/msaad1999/PHP-Login-System)
 ### Installazione
 1. Importa il file 'assets/setup/db.sql' nel DBMS (PhpMyAdmin). Il file dump crea il database, quindi nessun tipo di azione é richiesta. Se si vuole aggiornare il nome del database, cambialo nel file dump dove il database é dichiarato.
 2. Modifica il file `assets / setup / env.php` e configura le informazioni dell'applicazione, la connessione al database e il server SMTP. Il valore della porta di solito non è necessario nelle connessioni al database, quindi modifica solo se sai cosa stai facendo. Il server di posta elettronica (e l'account di posta elettronica collegato) verrà utilizzato per inviare email di conferma, validazione e notifica.

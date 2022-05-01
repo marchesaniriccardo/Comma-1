@@ -38,7 +38,7 @@ Si occupa della gestione e della risoluzione delle non conformità.
 La presa in carico di un problema e quindi la decisione di azioni correttive.
 ## Requisiti
 ### Documentazione
- - [Storyboard](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/Storyboard.pdf)
+ - [Storyboard](https://www.figma.com/file/yWIW5gWp5eheBposYQcpyd/storyboard?node-id=0%3A1)
  - [Schema ER](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/schema_E-R_NC_ristrutturato.png)
  - [Gantt](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/GANTT_PCTO.pdf)
  - [WBS](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/WBS.png)
@@ -122,12 +122,6 @@ else {
 }
 ```
 #### CSRF Protection
-/* per la generazione di una sessione ho creato un valore di 64 byte, dopodiche ho fatto una conversione in 'SHA256' e con le seguenti righe
-
-$name_session = $_SESSION['csrf_token'] = $final_csrf; //assegno all'ID il valore csrf
-session_name($name_session); //inserisco il nome della sessisone ($name_session) come il valore csrf
-
-*/
 C'è anche una pesante protezione contro gli tentativi di CSRF. Un `token csrf` sicuro viene generato all'avvio della sessione e inviato come valore nascosto nel corpo del post per tutti i moduli, in cui viene convalidato e consente allo script di procedere solo se la convalida riesce. La protezione csrf funziona per tutti i moduli, indipendentemente dal fatto che l'utente sia collegato o meno.
 
 Il token csrf è gestito dalle funzioni presenti nel file `assets/includes/security_functions.php`. Il token viene crittografato per impedirne l'estrazione e l'utilizzo.
@@ -144,8 +138,6 @@ function generate_csrf_token() {
 }
 ```
 ### Login
-Il sistema supporta un sistema di login e registrazione predefinito e sicuro. L'utente può registrarsi per creare un nuovo account e verrà quindi invitato a effettuare il login sul nuovo account con le sue credenziali. L'utente può anche impostare la sua immagine del profilo durante la registrazione. Per creare un nuovo account, l'utente deve impostare un nome utente univoco e un indirizzo email. Sono disponibili anche altri campi di informazione, ma sono facoltativi e possono essere saltati.
 
-Il sistema di login supporta anche una funzionalità `ricordami`, che manterrà l'utente collegato per un certo periodo di tempo (attualmente un mese) anche se il browser o il sistema verranno spenti.
 
 ### Automatic Logout on Inactivity

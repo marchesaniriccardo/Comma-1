@@ -20,7 +20,6 @@ Sistema di qualcosa PHP di facile integrazione e sicurezza elevata con login, re
 - [Login](#login)
 - [Automatic Logout on Inactivity](#automatic-logout-on-inactivity)
 - [License](#license)
-- [Template](https://github.com/pcto5ID/PHP-Login-System.git)
 
 ## Introduzione
 ### Qual'era lo scopo che era stato richiesto?

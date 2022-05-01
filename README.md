@@ -74,10 +74,7 @@ In ciascuna cartella di pagina, il file `index.php` è la pagina principale, la 
 | `assets/css`                  | Cartelle per i file CSS personalizzati globali o specifici per il layout. |
 | `assets/images`               | Le immagini utilizzate nell'interfaccia utente dell'applicazione o nel file README di git. |
 | `assets/includes`             | Funzioni o classi. |
-| `assets/js`                   | Custom javascript files. |
 | `assets/setup`                | File di configurazione e di setup del progetto. |
-| `assets/uploads`              | Cartella per tutti i contenuti caricati dagli utenti dell'applicazione. |
-| `assets/uploads/users`        | Immagini caricate dagli utenti. |
 | `assets/vendor`               | Cartella per tutti i plugin / risorse. |
 | `assets/documentation`               | Cartella per tutta la documentazione inerente al progetto |
 

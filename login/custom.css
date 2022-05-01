@@ -5,22 +5,66 @@ body {
     padding: 0px;
 }
 
-.centered-axis-x {
-    position: absolute;
-    left: 25%;
+input {
+    height: 60px;
+}
+
+button {
+    height: 60px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.form_login {
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo_image {
+    left: 50%;
     top: 3%;
     transform: translate(-50%, 0);
 }
 
-@media only screen and (max-width: 992px) {
+.login_welcome {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login_title {
+    font-size: 60px;
+    left: 50%;
+    top: 3%;
+    transform: translate(-50%, 0%);
+}
+
+/*@media only screen and (max-width: 992px) {
     .centered-axis-x {
         transform: translate(25%, 0);
     }
-}
+}*/
 
-#left_col{
+#left_col {
     background-color: #0C4B8E;
 }
-#right_col{
+
+#right_col {
     background-color: #041F4F;
 }

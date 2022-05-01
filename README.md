@@ -98,10 +98,11 @@ Il sistema è già stato realizzato con la struttura di file di applicazione PHP
 - HTML5
 - CSS3
 ### Ambiente di Sviluppo
+- Apache
+- Ubuntu
 ### Risorse Esterne/Plugins
 - Bootstrap-4.3.1
 ## Sicurezza
-da finire
 ### SQL Injection Protection
 da finire
 ### Login

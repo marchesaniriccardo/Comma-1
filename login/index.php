@@ -12,7 +12,6 @@
         <div class="col-2" id=""></div>
         <div class="col-8" id="">
             <form class="form-auth" action="../includes/login_include" method="POST">
-                check_if_the_user_is_logged_in();
             </form>
         </div>
         <div class="col-2" id=""></div>

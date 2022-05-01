@@ -2,18 +2,19 @@
     define("TITLE", "Comma - Login");
     include "../assets/layouts/header.php";
 ?>
-<div class="container">
-    <div class="centered-axis-x">
-        <img src="../assets/images/logo_intero_w.png" alt="" height="100px">
+<div class="row h-100">
+    <!--- Left Column --->
+    <div class="col-lg-6 col-md-12" id="left_col">
+
     </div>
-
-    <div class="row h-100">
-        <div class="col-lg-6 col-md-12" id="left_col">
-
+    <!-- Right Column -->
+    <div class="row col-lg-6 col-md-12" id="right_col">
+        <div class="col-2" id=""></div>
+        <div class="col-8" id="">
+            <form class="form-auth" action="../includes/login_include" method="POST">
+            </form>
         </div>
-        <div class="col-lg-6 col-md-12" id="right_col">
-            
-        </div>
+        <div class="col-2" id=""></div>
     </div>
 </div>
 <?php 

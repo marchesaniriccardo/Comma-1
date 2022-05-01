@@ -34,6 +34,8 @@ CREATE TABLE `cliente` (
   `password` varchar(255) NOT NULL,
   `nome` varchar(255) DEFAULT NULL,
   `cognome` varchar(255) DEFAULT NULL,
+  `indirizzo` varchar(255) DEFAULT NULL,
+  `telefono` int(10) DEFAULT NULL,
   `gender` char(1) DEFAULT NULL,
   `headline` varchar(255) DEFAULT NULL,
   `bio` text DEFAULT NULL,

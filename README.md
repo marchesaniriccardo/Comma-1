@@ -36,7 +36,7 @@ Si occupa della gestione e della risoluzione delle non conformità.
 La presa in carico di un problema e quindi la decisione di azioni correttive.
 ## Requisiti
 ### Documentazione
- - [Storyboard](https://www.figma.com/file/yWIW5gWp5eheBposYQcpyd/storyboard?node-id=0%3A1)
+ - [Storyboard](https://www.figma.com/file/9bqYqbln5STAhcT0qkxyXz/storyboard-(Copy)?node-id=0%3A1)
  - [Schema ER](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/schema_E-R_NC_ristrutturato.png)
  - [Gantt](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/GANTT_PCTO.pdf)
  - [WBS](https://github.com/pcto5ID/Comma/blob/main/assets/documentation/WBS.png)

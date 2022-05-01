@@ -1,8 +1,8 @@
 <?php
 
-    if (isset($_SESSION['auth'])) {
+    if (isset($_SESSION['logged'])) {
 
-        header("Location: home");
+        header("Location: dashboard");
         exit();
     }
     else {

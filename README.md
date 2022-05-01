@@ -17,7 +17,6 @@ Sistema di qualcosa PHP di facile integrazione e sicurezza elevata con login, re
   - [Risorse Esterne](#risorse-esterneplugins)
 - [Sicurezza](#sicurezza)
 - [SQL Injection Protection](#sql-injection-protection)
-- [CSRF Protection](#csrf-protection)
 - [Login](#login)
 - [Automatic Logout on Inactivity](#automatic-logout-on-inactivity)
 - [License](#license)
@@ -85,7 +84,10 @@ In ciascuna cartella di pagina, il file `index.php` è la pagina principale, la 
 
 ### Istruzioni
 Le nuove pagine possono essere aggiunte rapidamente creando più cartelle nella directory principale, con il file frontend `index.php`,le funzionalità backend nella sottocartella `includes` e lo stile personalizzato nel file `custom.css`.
-Nuovi gruppi di funzioni o classi possono essere creati in nuovi file nella cartella `assets/includes/` e devono essere inclusi nelle pagine rilevanti. Se le funzionalità aggiunte sono in gran parte universali, possono essere richiesti nel file `assets/layouts/header.php` (questo li include per tutti i file frontend, ma i file backend dovranno ancora essere collegati singolarmente). Allo stesso modo, altri file di CSS globali possono essere salvati nella cartella `assets/css` e inclusi nel file di layout header.php. La stessa convenzione si applicherà ai file JS, con gli script che saranno nella cartella `assets/js/` e inclusi nel file `assets/layouts/footer.php`.
+
+Nuovi gruppi di funzioni o classi possono essere creati in nuovi file nella cartella `assets/includes/` e devono essere inclusi nelle pagine rilevanti. 
+
+Se le funzionalità aggiunte sono in gran parte universali, possono essere richiesti nel file `assets/layouts/header.php` (questo li include per tutti i file frontend, ma i file backend dovranno ancora essere collegati singolarmente). Allo stesso modo, altri file di CSS globali possono essere salvati nella cartella `assets/css` e inclusi nel file di layout header.php.
 
 Ulteriori plugin o risorse offline possono essere collocati nella cartella`assets/vendor/` e collegati nel file di layout header o footer, a seconda del tipo di file da collegare.
 
@@ -97,47 +99,12 @@ Il sistema è già stato realizzato con la struttura di file di applicazione PHP
 - HTML5
 - CSS3
 ### Ambiente di Sviluppo
-- Apache 
-- Ubuntu
 ### Risorse Esterne/Plugins
 - Bootstrap-4.3.1
 ## Sicurezza
 ### SQL Injection Protection
-Il sistema utilizza "mysqli prepared statements" per tutte le interazioni con il database, eliminando la maggior parte dei rischi di SQL injection. Non è stato usato alcun query SQL raw in nessuna parte, inoltre, tutti i dati inseriti dall'utente vengono verificati e controllati prima di essere utilizzati in qualsiasi funzionalità dell'applicazione. Di conseguenza si intensificano ulteriormente le misure di sicurezza.
-```php
-// example database query
-
-$sql = "DELETE FROM auth_tokens WHERE user_email=? AND auth_type='account_verify';";
-$stmt = mysqli_stmt_init($conn);
-if (!mysqli_stmt_prepare($stmt, $sql)) {
-
-    $_SESSION['ERRORS']['sqlerror'] = 'SQL ERROR';
-    header("Location: ../");
-    exit();
-}
-else {
-
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt);
-}
-```
-#### CSRF Protection
-C'è anche una pesante protezione contro gli tentativi di CSRF. Un `token csrf` sicuro viene generato all'avvio della sessione e inviato come valore nascosto nel corpo del post per tutti i moduli, in cui viene convalidato e consente allo script di procedere solo se la convalida riesce. La protezione csrf funziona per tutti i moduli, indipendentemente dal fatto che l'utente sia collegato o meno.
-
-Il token csrf è gestito dalle funzioni presenti nel file `assets/includes/security_functions.php`. Il token viene crittografato per impedirne l'estrazione e l'utilizzo.
-```php
-// csrf token generation
-
-function generate_csrf_token() {
-  if (!isset($_SESSION)) {
-      session_start();
-  }
-  if (empty($_SESSION['token'])) {
-      $_SESSION['token'] = bin2hex(random_bytes(32));
-  }
-}
-```
 ### Login
-
-
 ### Automatic Logout on Inactivity
+
+### Future improvements
+- Se abbiamo tempo aggiungiamo la funzionalità aggiuntiva di sicurezza per proteggere dagli attacchi di tipo cross-side (CSRF protection)

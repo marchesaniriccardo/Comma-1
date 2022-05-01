@@ -102,9 +102,12 @@ Il sistema è già stato realizzato con la struttura di file di applicazione PHP
 ### Risorse Esterne/Plugins
 - Bootstrap-4.3.1
 ## Sicurezza
+da finire
 ### SQL Injection Protection
+da finire
 ### Login
+da finire
 ### Automatic Logout on Inactivity
-
+da finire
 ### Future improvements
 - Se abbiamo tempo aggiungiamo la funzionalità aggiuntiva di sicurezza per proteggere dagli attacchi di tipo cross-side (CSRF protection)

@@ -3,9 +3,9 @@
     include "../assets/layouts/header.php";
 ?>
 
-<div class = "contatiner">
+<!-- Left side column empty -->
 
-</div>
+<!-- Right side column sludebar -->
 
 <?php
     include "../assets/layouts/footer.php";

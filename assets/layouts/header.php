@@ -24,7 +24,7 @@ require '../assets/includes/security_functions.php';
     <link rel="stylesheet" href="../assets/vendor/bootstrap-4.3.1/css/bootstrap.min.css">
 
     <!-- Fontawsome links -->
-    <link rel="stylesheet" href="../assets/vendor/fontawesome-5.12.0/css/all.min.css">
+    <!-- link rel="stylesheet" href="../assets/vendor/fontawesome-5.12.0/css/all.min.css" -->
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="../assets/css/global.css">

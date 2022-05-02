@@ -19,11 +19,19 @@ function fill_NC_table()
     }
 
     try {
-        $sql = '
+        if (isset($_POST['search_button']) && !empty($_POST['search_field'])) {
+            //filtro sulla ricerca applicato
+            $sql = '
+            ';
+        } else {
+            //filtro non applicato
+            $sql = '
                 SELECT nci.Numero, ri.Data, nci.Stato, nci.Priorita, nci.Origine
                 FROM nc_interna as nci JOIN rilevamento_interno as ri
                 on nci.Numero = ri.NC
             ';
+        }
+
         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
         if ($result) {

@@ -12,11 +12,11 @@ include "./includes/management_include.php";
 <!-- search bar -->
 <section class="p-5">
     <div class="container">
-        <div class="row text-center">
+        <form class="row text-center" action="./includes/management_include.php" method="post">
             <div class="col-md-6 p-3 col-sm-12 input-group align-items-center justify-content-center">
                 <!-- BACKEND: barra di ricerca per filtro sulle non conformità -->
-                <input type="text" class="form-control" placeholder="Cerca una non conformità" />
-                <button class="btn btn-primary" type="button"><span><i class="bi bi-search"></span></i></button>
+                <input type="text" class="form-control" name="search_field" placeholder="Cerca una non conformità" />
+                <button class="btn btn-primary" type="button" name="search_button" onclick="refresh()"><span><i class="bi bi-search"></span></i></button>
             </div>
             <div class="col-md-3 col-sm-6 p-3 align-items-center justify-content-center">
                 <!-- BACKEND: tasto filtra -->
@@ -26,15 +26,15 @@ include "./includes/management_include.php";
                 <!-- BACKEND: tasto ordina -->
                 <button class="btn btn-primary btn-lg text-uppercase" type="button" id="">ordina</button>
             </div>
-        </div>
+        </form>
     </div>
 </section>
 
 <section class="p-1">
     <div class="container">
         <table class="table table-hover text-light text-uppercase">
-            <!-- prima riga della tabella -->
             <thead>
+                <!-- prima riga della tabella -->
                 <tr>
                     <th scope="col">numero</th>
                     <th scope="col">data</th>
@@ -43,45 +43,8 @@ include "./includes/management_include.php";
                     <th scope="col">origine</th>
                 </tr>
             </thead>
-
-            <!-- BACKEND costruire le righe dinamicamente con informazioni prese dal database -->
             <tbody>
                 <?php fill_NC_table(); ?>
-                <!-- tr>
-                    <th scope="row">1</th>
-                    <td>10.10.2020</td>
-                    <td>aperta</td>
-                    <td>media</td>
-                    <td>laminazione</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>10.10.2020</td>
-                    <td>aperta</td>
-                    <td>media</td>
-                    <td>laminazione</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>10.10.2020</td>
-                    <td>aperta</td>
-                    <td>media</td>
-                    <td>laminazione</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>10.10.2020</td>
-                    <td>aperta</td>
-                    <td>media</td>
-                    <td>laminazione</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>10.10.2020</td>
-                    <td>aperta</td>
-                    <td>media</td>
-                    <td>laminazione</td>
-                </tr -->
             </tbody>
         </table>
     </div>

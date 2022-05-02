@@ -3,8 +3,10 @@
 /* Cerca di seguire la struttura che ho preso dal template */
 
 html,
-body{
-
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* --------------Dashboard---------------------- */

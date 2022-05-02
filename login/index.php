@@ -9,7 +9,7 @@ include "../assets/layouts/header.php";
         <div class="position-absolute logo_image">
             <img src="../assets/images/logo_intero_w.png" alt="" height="100px">
         </div>
-        <div class="h1 position-absolute login_welcome">
+        <div class="position-absolute login_welcome">
             <span class="text-uppercase text-light">benvenuti in comma</span>
         </div>
     </div>
@@ -20,21 +20,23 @@ include "../assets/layouts/header.php";
         </div>
         <div class="col-8" id="">
             <div class="position-absolute login_title">
-                <span class="text-uppercase text-light">log-in</span>
+                <span class="text-uppercase text-light d-none d-md-block">log-in</span>
             </div>
             <form class="form-auth flex-column text-white position-absolute form_login" action="../includes/login_include" method="POST">
-                <div>
+                <!-- BACKEND completare gli id di ogni tag input e del tag button del submit-->
+                <!-- nel campo for di ogni label copiare il corrispettivo id dell'input associato -->
+                <div class="form-group">
                     <label for="" class="h2 form-label mb-3 ml-3">User</label>
-                    <input type="email" class="form-control mb-3" id="" aria-describedby="emailHelp">
+                    <input type="email" class="form-control mb-3 form_control_font" id="">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="" class="h2 form-label mb-3 ml-3">Password</label>
-                    <input type="password" class="form-control mb-3" id="">
+                    <input type="password" class="form-control mb-3 form_control_font" id="">
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary mb-3 text-uppercase">Conferma</button>
+                <div class="form-group w-100 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary w-100 text-uppercase"><span class="form_control_font">conferma</span></button>
                 </div>
-                <div>
+                <div class="w-100 d-flex justify-content-center">
                     <a href="#"><span class="h2 text-light text-capitalize">recupero credenziali</span></a>
                 </div>
             </form>

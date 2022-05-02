@@ -36,19 +36,14 @@ function fill_NC_table()
 
         if ($result) {
             while ($row = mysqli_fetch_array($result)) {
-
-                for ($i = 0; $i < 20; $i++) {
-                    echo "<tr>";
-                    echo "<td>" . $row['Numero'] . "</td>";
-                    echo "<td>" . $row['Data'] . "</td>";
-                    echo "<td>" . $row['Stato'] . "</td>";
-                    echo "<td>" . $row['Priorita'] . "</td>";
-                    echo "<td>" . $row['Origine'] . "</td>";
-                    echo "</tr>";
-                }
+                echo "<tr>";
+                echo "<td>" . $row['Numero'] . "</td>";
+                echo "<td>" . $row['Data'] . "</td>";
+                echo "<td>" . $row['Stato'] . "</td>";
+                echo "<td>" . $row['Priorita'] . "</td>";
+                echo "<td>" . $row['Origine'] . "</td>";
+                echo "</tr>";
             }
-
-
             die;
         }
     } catch (mysqli_sql_exception $e) {

@@ -44,7 +44,7 @@ include "./includes/management_include.php";
                 </tr>
             </thead>
             <tbody>
-                <?php fill_NC_table(); ?>
+                <?php fill_NC_table(); ?> <!-- BACKEND: da rivedere perché non corretto -->
             </tbody>
         </table>
     </div>

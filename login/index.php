@@ -34,7 +34,7 @@ include "../assets/layouts/header.php";
                     <input type="password" class="form-control mb-3 form_control_font" id="">
                 </div>
                 <div class="form-group w-100 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary w-100 text-uppercase"><span class="form_control_font">conferma</span></button>
+                    <button type="submit" class="btn btn-primary w-100 text-uppercase" id=""><span class="form_control_font">conferma</span></button>
                 </div>
                 <div class="w-100 d-flex justify-content-center">
                     <a href="#"><span class="h2 text-light text-capitalize">recupero credenziali</span></a>

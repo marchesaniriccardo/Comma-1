@@ -47,7 +47,7 @@ include "../assets/layouts/header.php";
                 </tr>
             </thead>
 
-            <!-- BACKEND csotruire le righe dinamicamente con informazioni prese dal database -->
+            <!-- BACKEND costruire le righe dinamicamente con informazioni prese dal database -->
             <tbody>
                 <tr>
                     <th scope="row">1</th>

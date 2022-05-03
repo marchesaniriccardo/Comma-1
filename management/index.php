@@ -1,5 +1,5 @@
 <?php
-define("TITLE", "Comma - Login");
+define("TITLE", "Comma - Management");
 include "../assets/layouts/header.php";
 include "./includes/management_include.php";
 ?>
